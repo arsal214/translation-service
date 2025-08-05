@@ -88,7 +88,7 @@ class TranslationApiTest extends TestCase
     /** @test */
     public function export_endpoint_should_respond_under_500ms()
     {
-        $locale = Language::create(['code' => 'en', 'name' => 'English']);
+        $locale = Language::create(['locale' => 'en', 'name' => 'English']);
         Translation::factory()->count(100)->create(['language_id' => $locale->id]);
 
         $start = microtime(true);
